@@ -1,0 +1,22 @@
+IMAPAccount fastmail
+	SSLType IMAPS
+	Host imap.fastmail.com
+	User codingstream@fastmail.com
+	PassCmd "secret-tool lookup fastmail password"
+	CertificateFile /etc/ssl/certs/ca-certificates.crt
+
+IMAPStore fastmail-remote
+	Account fastmail
+
+MaildirStore fastmail-local
+	Subfolders Verbatim
+	Path ~/.mail/fastmail/
+	Inbox ~/.mail/fastmail/Inbox
+
+Channel fastmail
+	Master :fastmail-remote:
+	Slave :fastmail-local:
+	Patterns *
+
+Create Both
+SyncState *
