@@ -1,8 +1,0 @@
--inbox +archived folder:/Archive/
--inbox +drafts folder:/Drafts/
--inbox +spam folder:"/Junk Mail/"
--inbox +notes folder:/Notes/
--inbox +sent folder:"/Sent Items/"
--inbox +deleted folder:/Trash/
--inbox +linux-kernel folder:/linux-kernel/
--inbox +linux-riscv folder:/linux-riscv/

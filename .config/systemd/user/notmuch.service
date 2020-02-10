@@ -1,6 +1,0 @@
-[Unit]
-Description=Notmuch indexing service
-
-[Service]
-Type=oneshot
-ExecStart=/usr/bin/notmuch new

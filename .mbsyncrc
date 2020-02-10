@@ -1,22 +1,91 @@
 IMAPAccount fastmail
-	SSLType IMAPS
-	Host imap.fastmail.com
-	User codingstream@fastmail.com
-	PassCmd "secret-tool lookup fastmail password"
-	CertificateFile /etc/ssl/certs/ca-certificates.crt
+SSLType IMAPS
+Host imap.fastmail.com
+User codingstream@fastmail.com
+PassCmd "pass app/codingstream@fastmail.com"
+CertificateFile /etc/ssl/certs/ca-certificates.crt
+
 
 IMAPStore fastmail-remote
-	Account fastmail
+Account fastmail
 
 MaildirStore fastmail-local
-	Subfolders Verbatim
-	Path ~/.mail/fastmail/
-	Inbox ~/.mail/fastmail/Inbox
+Subfolders Verbatim
+Path ~/.mail/
+Inbox ~/.mail/inbox
 
-Channel fastmail
-	Master :fastmail-remote:
-	Slave :fastmail-local:
-	Patterns *
 
+Channel fastmail-inbox
+Master :fastmail-remote:Inbox
+Slave :fastmail-local:inbox
 Create Both
+Expunge Both
+
+Channel fastmail-archive
+Master :fastmail-remote:Archive
+Slave :fastmail-local:archive
+Create Both
+Expunge Both
+
+Channel fastmail-drafts
+Master :fastmail-remote:Drafts
+Slave :fastmail-local:drafts
+Create Both
+Expunge Both
+
+Channel fastmail-sent
+Master :fastmail-remote:"Sent Items"
+Slave :fastmail-local:sent
+Create Both
+Expunge Both
+
+Channel fastmail-spam
+Master :fastmail-remote:"Junk Mail"
+Slave :fastmail-local:spam
+Create Both
+Expunge Both
+
+Channel fastmail-trash
+Master :fastmail-remote:Trash
+Slave :fastmail-local:trash
+Create Both
+Expunge Both
+
+Channel fastmail-linux-kernel
+Master :fastmail-remote:linux-kernel
+Slave :fastmail-local:linux-kernel
+Create Both
+Expunge Both
+
+Channel fastmail-linux-riscv
+Master :fastmail-remote:linux-riscv
+Slave :fastmail-local:linux-riscv
+Create Both
+Expunge Both
+
+Channel fastmail-debian-security-announce
+Master :fastmail-remote:debian-security-announce
+Slave :fastmail-local:debian-security-announce
+Create Both
+Expunge Both
+
+Channel fastmail-debian-riscv
+Master :fastmail-remote:debian-riscv
+Slave :fastmail-local:debian-riscv
+Create Both
+Expunge Both
+
+
+Group fastmail
+Channel fastmail-inbox
+Channel fastmail-archive
+Channel fastmail-drafts
+Channel fastmail-sent
+Channel fastmail-spam
+Channel fastmail-trash
+Channel fastmail-linux-kernel
+Channel fastmail-linux-riscv
+Channel fastmail-debian-security-announce
+Channel fastmail-debian-riscv
+
 SyncState *

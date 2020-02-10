@@ -1,0 +1,6 @@
+[Unit]
+Description=Maildir syncing
+
+[Service]
+Type=oneshot
+ExecStart=mbsync -Va
