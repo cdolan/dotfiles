@@ -1,7 +1,7 @@
 autoload -Uz compinit && compinit
 autoload -U zmv
 
-set -o emacs
+bindkey -e
 
 alias grep='grep --color=auto'
 alias ls='ls -F --color=auto'
