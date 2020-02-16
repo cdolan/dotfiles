@@ -2,7 +2,7 @@ IMAPAccount fastmail
 SSLType IMAPS
 Host imap.fastmail.com
 User codingstream@fastmail.com
-PassCmd "pass app/codingstream@fastmail.com"
+PassCmd "secret-tool lookup fastmail password"
 CertificateFile /etc/ssl/certs/ca-certificates.crt
 
 
@@ -52,25 +52,19 @@ Create Both
 Expunge Both
 
 Channel fastmail-linux-kernel
-Master :fastmail-remote:linux-kernel
+Master :fastmail-remote:"lists/linux-kernel"
 Slave :fastmail-local:linux-kernel
 Create Both
 Expunge Both
 
 Channel fastmail-linux-riscv
-Master :fastmail-remote:linux-riscv
+Master :fastmail-remote:"lists/linux-riscv"
 Slave :fastmail-local:linux-riscv
 Create Both
 Expunge Both
 
-Channel fastmail-debian-security-announce
-Master :fastmail-remote:debian-security-announce
-Slave :fastmail-local:debian-security-announce
-Create Both
-Expunge Both
-
 Channel fastmail-debian-riscv
-Master :fastmail-remote:debian-riscv
+Master :fastmail-remote:"lists/debian-riscv"
 Slave :fastmail-local:debian-riscv
 Create Both
 Expunge Both
@@ -85,7 +79,6 @@ Channel fastmail-spam
 Channel fastmail-trash
 Channel fastmail-linux-kernel
 Channel fastmail-linux-riscv
-Channel fastmail-debian-security-announce
 Channel fastmail-debian-riscv
 
 SyncState *
