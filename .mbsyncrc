@@ -51,6 +51,30 @@ Slave :fastmail-local:trash
 Create Both
 Expunge Both
 
+Channel fastmail-arch-announce
+Master :fastmail-remote:"lists/arch-announce"
+Slave :fastmail-local:arch-announce
+Create Both
+Expunge Both
+
+Channel fastmail-arch-dev-public
+Master :fastmail-remote:"lists/arch-dev-public"
+Slave :fastmail-local:arch-dev-public
+Create Both
+Expunge Both
+
+Channel fastmail-arch-general
+Master :fastmail-remote:"lists/arch-general"
+Slave :fastmail-local:arch-general
+Create Both
+Expunge Both
+
+Channel fastmail-arch-security
+Master :fastmail-remote:"lists/arch-security"
+Slave :fastmail-local:arch-security
+Create Both
+Expunge Both
+
 Channel fastmail-linux-kernel
 Master :fastmail-remote:"lists/linux-kernel"
 Slave :fastmail-local:linux-kernel

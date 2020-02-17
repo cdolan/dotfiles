@@ -1,0 +1,16 @@
+bind attach,index G last-entry
+bind attach,index g first-entry
+
+bind attach,index,pager \CD next-page
+bind attach,index,pager \CU previous-page
+
+bind index,pager \Cp sidebar-prev
+bind index,pager \Cn sidebar-next
+bind index,pager \Co sidebar-open
+
+bind pager G bottom
+bind pager g top
+bind pager j next-line
+bind pager k previous-line
+
+# vim: set ft=muttrc:

@@ -1,0 +1,38 @@
+# Maildir
+set mbox_type = Maildir
+set folder = ~/.mail
+set spoolfile = +inbox
+set postponed = +drafts
+set record = +sent
+set sendmail = "/usr/bin/msmtp"
+
+# Basic
+set realname = "Christopher Dolan"
+set from = "chris@codingstream.org"
+set use_from = yes
+
+# Core
+set header_cache = ~/.cache/mutt
+set editor = "vim"
+set sort = threads
+set sort_aux = reverse-last-date-received
+set charset = "utf-8"
+set read_inc = 0
+set maildir_header_cache_verify = no
+unset wait_key
+unset use_domain
+unset user_agent
+
+# Mailboxes
+mailboxes ! `command ls ~/.mail | awk '{ printf "=%s ", $1 }'`
+
+# Sidebar
+set sidebar_visible
+set sidebar_format = "%B%?F? [%F]?%* %?N?%N/?%S"
+set mail_check_stats
+
+source ~/.config/mutt/binds
+source ~/.config/mutt/macros
+source ~/.config/mutt/colors
+
+# vim: set ft=muttrc:

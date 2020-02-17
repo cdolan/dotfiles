@@ -7,9 +7,6 @@
 [submodule ".vim/pack/default/start/vim-endwise"]
 	path = .vim/pack/default/start/vim-endwise
 	url = https://github.com/tpope/vim-endwise
-[submodule ".config/kitty/kitty-themes"]
-	path = .config/kitty/kitty-themes
-	url = https://github.com/dexpota/kitty-themes
-[submodule ".vim/pack/default/start/jellybeans.vim"]
-	path = .vim/pack/default/start/jellybeans.vim
-	url = https://github.com/nanotech/jellybeans.vim
+[submodule ".vim/pack/default/start/space-vim-theme"]
+	path = .vim/pack/default/start/space-vim-theme
+	url = https://github.com/liuchengxu/space-vim-theme

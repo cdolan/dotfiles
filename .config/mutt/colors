@@ -1,0 +1,23 @@
+color attachment red default
+color hdrdefault cyan default
+
+color header brightcyan default ^Date
+color header brightgreen default ^Subject:
+color header brightyellow default ^From:
+color header yellow default ^Cc:
+color header yellow default ^To:
+
+color index brightwhite default "~N|~O"
+
+color indicator magenta default
+color markers brightred default
+color normal white default
+color quoted cyan default
+color quoted1 magenta default
+color quoted2 blue default
+color signature yellow default
+color status blue default
+color tilde blue default
+color tree magenta default
+
+# vim: set ft=muttrc:

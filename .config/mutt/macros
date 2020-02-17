@@ -1,0 +1,4 @@
+macro index ,g "<shell-escape>mbsync -a<enter>"
+macro pager ,d "<view-attachments><pipe-message>vim -c ':call Mutt()' -<enter><exit>"
+
+# vim: set ft=muttrc:
